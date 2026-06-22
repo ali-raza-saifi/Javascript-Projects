@@ -1,0 +1,11 @@
+.cart_btn{
+  background-color: yellow ;
+  border: 2px solid black;
+}
+.buy_btn{
+  background-color: orange;
+  border: 2px solid black;
+}
+p{
+  font-size: larger;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+
+</body>
+<script>
+// function greet (name ){
+//   console.log(`Hello! ${name}`);
+//   if(name === undefined){
+//     console.log('hi there!');
+//   }
+// }
+//   greet('ali raza');
+//   greet();
+
+
+// function convertToFahrenheit (celsius){
+// let fahrenheit = (celsius *9/5)+32;
+// console.log(fahrenheit);``
+// }
+// convertToFahrenheit(25);
+
+// function convertToCelsius(fahrenheit){
+//   let celsius = (fahrenheit -32)*5/9;
+//   console.log(celsius);
+// }
+// convertToCelsius(86);
+
+// function convertToFahrenheit (celsius){
+//   fahrenheit = (celsius*9/5)+32;
+//   return fahrenheit;
+// }
+
+// function convertToCelsius(fahrenheit){
+//   celsius=(fahrenheit-32)*5/9;
+//   return celsius;
+// }
+// function convertTemperature(degrees,unit){
+//   if(unit === 'f'){
+//     const result = convertToFahrenheit(degrees);
+//     return `${result}C`;
+//   }
+//   else if (unit === 'C'){
+//     const result =convertToCelsius(degrees);
+//     return `${result}f`;
+//   }
+// }
+
+// console.log(convertTemperature(25,'f'));
+
+
+function convertLength(length, from, to) {
+  let result;
+
+  if (from === 'km') {
+    if (to === 'm') {
+      result = length * 1000;
+    } else if (to === 'cm') {
+      result = length * 100000;
+    } else {
+      result = length;
+    }
+  } else if (from === 'm') {
+    if (to === 'km') {
+      result = length / 1000;
+    } else if (to === 'cm') {
+      result = length * 100;
+    } else {
+      result = length;
+    }
+  } else if (from === 'cm') {
+    if (to === 'km') {
+      result = length / 100000;
+    } else if (to === 'm') {
+      result = length / 100;
+    } else {
+      result = length;
+    }
+  }
+
+  if (from === to) {
+    console.log(`The length is already in ${to}: ${result}`);
+  } else if (result !== undefined) {
+    console.log(`Converted ${length}${from} to ${result}${to}`);
+  } else {
+    console.log(`Unsupported conversion from ${from} to ${to}`);
+  }
+
+  return result;
+}
+
+// Example usage:
+convertLength(2, 'km', 'm');
+convertLength(150, 'm', 'cm');
+convertLength(30000, 'cm', 'km');
+
+</script>
+
+</html>
