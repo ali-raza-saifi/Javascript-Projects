@@ -3,97 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock-paper-scissor Game</title>
+  <title>Rock-Paper-Scissor Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+      min-height: 40px;
+    }
+    
+    #score {
+      margin-top: 20px;
+      font-size: 16px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    button.reset {
+      background-color: #ff9800;
+      margin-top: 10px;
+    }
+    
+    button.reset:hover {
+      background-color: #e68900;
+    }
+  </style>
 </head>
-<style>
-</style>
 <body>
-  <p>Rock Paper Scissor Game</p>
-  <button
-  onclick="
-       const  randomNumber = Math.random();
-     let computerMove = '';
-     
-  if(randomNumber >=0 && randomNumber<1/3){
-    computerMove='rock'; }
-  else if(randomNumber>=1/3 && randomNumber<2/3){
-    computerMove='paper'; }
-    else if (randomNumber>=2/3 && randomNumber<1){
-     computerMove='Scissor';
+  <h1>Rock Paper Scissor Game</h1>
+  
+  <div>
+    <button onclick="playGame('rock')">Rock</button>
+    <button onclick="playGame('paper')">Paper</button>
+    <button onclick="playGame('scissor')">Scissor</button>
+  </div>
+  
+  <div id="result"></div>
+  
+  <div id="score">
+    <p>Wins: <span id="wins">0</span> | Losses: <span id="losses">0</span> | Ties: <span id="ties">0</span></p>
+    <button class="reset" onclick="resetScore()">Reset Score</button>
+  </div>
+
+  <script>
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+
+    // Function to get computer's random move
+    function getComputerMove() {
+      const randomNumber = Math.random();
+      
+      if (randomNumber < 1/3) {
+        return 'rock';
+      } else if (randomNumber < 2/3) {
+        return 'paper';
+      } else {
+        return 'scissor';
+      }
     }
-    
 
-
-  let result = '';
-  if(computerMove=== 'rock'){
-    result = 'match tie';
-  }
-  else if (computerMove=== 'paper'){
-    result='you lose';
-  } 
-  else if (computerMove=== 'Scissor'){
-    result='you win ';
-  }
- alert(`you choose rock.Computer choose ${computerMove}. ${result}`);
-  "
-  >Rock</button>
-  
-  <button onclick="
-              const  randomNumber = Math.random();
-            let computerMove = '';
-          if(randomNumber >=0 && randomNumber<1/3){
-            computerMove='rock'; }
-          else if(randomNumber>=1/3 && randomNumber<2/3){
-            computerMove='paper'; }
-            else if (randomNumber>=2/3 && randomNumber<1){
-            computerMove='Scissor';
-            }
-            
-
-
-          let result = '';
-          if(computerMove=== 'rock'){
-            result = 'you win';
-          }
-          else if (computerMove=== 'paper'){
-            result='match tie';
-          } 
-          else if (computerMove=== 'Scissor'){
-            result='you lose ';
-          }
-        alert(`you choose paper. Computer choose ${computerMove}. ${result}`);
-  
-  ">Paper</button>
-
-  <button onclick="
-    
-     const  randomNumber = Math.random();
-     let computerMove = '';
-  if(randomNumber >=0 && randomNumber<1/3){
-    computerMove='rock'; }
-  else if(randomNumber>=1/3 && randomNumber<2/3){
-    computerMove='paper'; }
-    else if (randomNumber>=2/3 && randomNumber<1){
-     computerMove='Scissor';
+    // Function to determine the game result
+    function determineResult(playerMove, computerMove) {
+      if (playerMove === computerMove) {
+        return 'tie';
+      } else if (
+        (playerMove === 'rock' && computerMove === 'scissor') ||
+        (playerMove === 'paper' && computerMove === 'rock') ||
+        (playerMove === 'scissor' && computerMove === 'paper')
+      ) {
+        return 'win';
+      } else {
+        return 'lose';
+      }
     }
-  
-  let result = '';
-  if(computerMove=== 'rock'){
-    result = 'you lose';
-  }
-  else if (computerMove=== 'paper'){
-    result='you win';
-  } 
-  else if (computerMove=== 'Scissor'){
-    result='match tie ';
-  }
- alert(`you choose scissor. Computer choose ${computerMove}. ${result}`);
-  
-  ">Scissor</button>
 
+    // Main game function
+    function playGame(playerMove) {
+      const computerMove = getComputerMove();
+      const result = determineResult(playerMove, computerMove);
+      
+      // Update score
+      if (result === 'win') {
+        wins++;
+      } else if (result === 'lose') {
+        losses++;
+      } else {
+        ties++;
+      }
+      
+      // Display result
+      let resultText = '';
+      if (result === 'win') {
+        resultText = `You chose <strong>${playerMove}</strong>. Computer chose <strong>${computerMove}</strong>. <span style="color: green;"><strong>You Win!</strong></span>`;
+      } else if (result === 'lose') {
+        resultText = `You chose <strong>${playerMove}</strong>. Computer chose <strong>${computerMove}</strong>. <span style="color: red;"><strong>You Lose!</strong></span>`;
+      } else {
+        resultText = `You chose <strong>${playerMove}</strong>. Computer chose <strong>${computerMove}</strong>. <span style="color: orange;"><strong>Match Tie!</strong></span>`;
+      }
+      
+      document.getElementById('result').innerHTML = resultText;
+      
+      // Update score display
+      document.getElementById('wins').textContent = wins;
+      document.getElementById('losses').textContent = losses;
+      document.getElementById('ties').textContent = ties;
+    }
 
-
-
-  <script></script>
+    // Reset score function
+    function resetScore() {
+      wins = 0;
+      losses = 0;
+      ties = 0;
+      document.getElementById('wins').textContent = '0';
+      document.getElementById('losses').textContent = '0';
+      document.getElementById('ties').textContent = '0';
+      document.getElementById('result').innerHTML = '';
+    }
+  </script>
 </body>
 </html>
