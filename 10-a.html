@@ -44,11 +44,14 @@
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
 .is-toggle{
   background-color: rgb(214, 200, 200);
   color: black;
 }
+
+
 
 </style>
 <body>
@@ -57,15 +60,45 @@
   <button class="btn3">Schedule for later</button>
   <button class="js-btn">Test</button>
   <button class="red blue"></button> -->
-<button class="is-toggle js-btn-1" onclick="
-let btn = document.querySelector('.js-btn-1');
+
+
+
+
+               /* The word "toggle" means turn on/off. */
+
+<button class="js-btn-1" onclick="
+let btn = this;
 if(!btn.classList.contains('is-toggle')){
   btn.classList.add('is-toggle');
 }else {
   btn.classList.remove('is-toggle');
 }
 ">Gaming</button>
+
+                   <!-- Music Button -->
+       <button class="js-btn-1"
+       onclick=" 
+       btn2 = this;
+       if(!btn2.classList.contains('is-toggle')){
+        btn2.classList.add('is-toggle');}
+      else {
+          btn2.classList.remove('is-toggle');
+        }
+        ">Music</button>
+                  
+                   <!-- Tech Button -->
+       <button class="js-btn-1"
+       onclick=" 
+       btn2 = this;
+       if(!btn2.classList.contains('is-toggle')){
+        btn2.classList.add('is-toggle');}
+      else {
+          btn2.classList.remove('is-toggle');
+        }
+        ">Tech</button>
+
   <script>
+
   //  let button= document.querySelector('.js-btn')
   // console.log(button.classList.contains('js-btn'));
   // let btn = document.querySelector('.red');

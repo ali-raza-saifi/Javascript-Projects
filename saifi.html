@@ -13,14 +13,74 @@
   <input type="text" id="taskInput" placeholder="Enter your task">
   <button id="addBtn">Add</button>
   <ul id="taskList"></ul> -->
-  
-  
+  <p> Rock Paper Scisor Game </p>
+  <button onclick="playGame('rock')">Rock</button>
+  <button onclick="playGame('paper')">Paper</button>
+  <button onclick="playGame('scissor')">Scissor</button>
 
   
 </body>
 
 <script>
+function playGame(playerMove){
 
+const computerMove =pickComputerMove();
+let result = '';
+if (playerMove === 'Scissor'){
+      if(computerMove=== 'rock'){
+    result = 'you lose';
+  }
+  else if (computerMove=== 'paper'){
+    result='you win';
+  } 
+  else if (computerMove=== 'scissor'){
+    result='match tie ';
+  }
+}
+  else if(playerMove === 'paper'){
+    if(computerMove=== 'rock'){
+        result = 'you win';
+      }
+      else if (computerMove=== 'paper'){
+        result='match tie';
+      } 
+      else if (computerMove=== 'scissor'){
+        result='you lose ';
+      }
+    }
+      else if(playerMove === "rock"){
+          if(computerMove=== 'rock'){
+            result = 'match tie';
+          }
+          else if (computerMove=== 'paper'){
+            result='you lose';
+          } 
+          else if (computerMove=== 'scissor'){
+            result='you win ';
+          }
+}
+alert(`you played ${playerMove} and computer played ${computerMove} so ${result}`);
+}
+
+
+
+
+
+
+  // this funcion for computer to pick a random move 
+  function pickComputerMove(){
+  let randNUm = Math.random(); // gives a random number between 0 and 1
+  if(randNUm < 0.33){
+    let res = "rock";
+  }
+  else if(randNUm < 0.66){
+     res = "paper";
+  }
+  else{
+    res = "scissor";
+  }
+  return res;
+  }
 // let num = prompt("Enter a  number : ");
 // for( i=1 ; i<=10; i++){
 //   console.log(`${num} * ${i} = ${num*i}`);

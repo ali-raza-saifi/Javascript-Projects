@@ -13,13 +13,11 @@
   <p>Orders under $40 = +$10 shipping</p>
   <p>Orders over $40 = FREE shipping</p>
   <input type="number" class="js-calculator" placeholder="Cost of Order"
-  onkeydown="
-Calculate_by_btn(event);
-  ">
-  <button onclick="
-   calculateShipping();             ">Calculate</button>
+  onkeydown="Calculate_by_btn(event); ">
+  
+  <button onclick="calculateShipping(); ">Calculate</button>
 <!-- clicks, keydowns  => envents
-onlick, onkeydown  => enent listners  (Every event listner gets an event object)
+onlick, onkeydown  => event listners  (Every event listner gets an event object)
 
 onclick  = Click
 onkeydown = key press
@@ -27,6 +25,10 @@ onscroll = scrolling
 onmouseseenter = hovering over
 onmouseleave = stop hovering over -->
    <p class="js-total-cost"></p>
+
+
+                // Below is the code for youtube subscribe button
+
 <!--   
  <p> Youtube Subscribe Button</p>
  <button onclick="
