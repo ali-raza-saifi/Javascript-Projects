@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Input Box */
+.js-calculator {
+  padding: 10px;
+  font-size: 16px;
+  width: 220px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input Focus Effect */
+.js-calculator:focus {
+  border-color: #007bff;
+}
+
+/* Button */
+.calc-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+/* Button Hover */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Message Text */
+.js-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+<body>
+    <input type="number" class="js-calculator" placeholder="Cost of Order"
+   ">
+  
+  <button class="calc-btn" onclick=" MessageShow();">Calculate</button>
+  <p class="js-message"></p>
+</body>
+
+
+<script>
+  function MessageShow(){
+    let inputValue = Number(document.querySelector('.js-calculator').value);
+    let messageElement = document.querySelector('.js-message');
+    if(inputValue ==""){
+      messageElement.textContent = "Please enter a valid positive number.";
+      messageElement.style.color = "blue";
+      return;
+    }
+    
+    if(inputValue < 0){
+      messageElement.textContent = "Please enter a valid positive number.";
+      messageElement.style.color = "red";
+    }
+    else{
+      messageElement.textContent = "Your value is valid.";
+      messageElement.style.color = "green";
+    }
+    
+    }
+  
+</script>
+</html>

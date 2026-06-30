@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Exercise 10-g and 10-h</title>
+</head>
+<style>
+  .is-toggle{
+    background-color: rgb(214, 200, 200);
+    color: black;
+  }
+</style>
+<body>
+  <h1>Select a category</h1>
+
+  <button class="btn" onclick="selectBtn(this)">Gaming</button>
+    <button class="btn" onclick="selectBtn(this)">Music</button>
+  <button class="btn" onclick="selectBtn(this)">Tech</button>
+
+
+</body>
+<script>
+function selectBtn(clickedBtn){
+ const buttons = document.querySelectorAll('.btn');
+ buttons.forEach(btn => {
+  btn.classList.remove('is-toggle');
+
+ });
+ clickedBtn.classList.add('is-toggle');
+}
+</script>
+</html>

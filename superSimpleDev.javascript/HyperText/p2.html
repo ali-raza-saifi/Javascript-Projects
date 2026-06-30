@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .header-div{
+background-color: black;
+height: 60px ;
+color: white;
+display: flex;
+
+  }
+  .fas{
+    font-size: 30px;
+    margin-left: 10px;
+    align-content: center;
+    
+  }
+  .header-p{
+    font-size: 25px;
+    align-content: center;
+    margin-left: 600px;
+  }
+  .header-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+  }
+  .header-list li a {
+    margin-left: 40px;
+  }
+  .hero-sec{
+    height: 260px;
+    background-color:  rgb(105, 105, 198);
+    color: white;
+    align-content: center;
+    
+  
+  
+   
+  }
+  .hero-h1{
+    font-size: 50px;
+     margin-left: 500px;
+    
+  }
+  .hero-p{
+    margin-top: 20px;
+    margin-left: 600px;
+    font-size: 20px;
+  }
+  .hero-btn{
+    font-size: 20px;
+    border: white;
+    border-radius: 8px;
+    height: 50px;
+    width: 100px;
+    margin-top: 15px;
+   margin-left: 680px;
+  }
+  .container1{
+    height: 221px;
+    align-content: center;
+    justify-items: center;
+  }
+.con1-p{
+  margin-top: 10px;
+}
+.container2{
+  background-color:  rgb(255, 241, 241) ;
+  height: 270px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+.subCon-1{
+  border: 2px solid black;
+  box-shadow: 20px 10px 3px black;
+  border-radius: 10px;
+  height: 100px;
+  align-content: center;
+  background-color: white;
+}
+.subCon-2{
+  
+  background-color: white;
+   border: 2px solid black;
+  box-shadow: 20px 10px 3px black;
+  border-radius: 10px;
+  height: 100px;
+  align-content: center;
+}
+.subCon-3{
+  
+  background-color: white;
+   border: 2px solid black;
+  box-shadow: 20px 10px 3px black;
+  border-radius: 10px;
+  height: 100px;
+  align-content: center;
+}
+
+.subCon-1-h3{
+  text-align: center;
+}
+.subCon-2-h3{
+  text-align: center;
+}
+.subCon-3-h3{
+  text-align: center;
+}
+.Name{
+  height: 20px;
+  width: 50px;
+}
+footer{
+  background-color: black;
+  height: 150px;
+  align-content: center;
+ text-align: center;
+}
+.foot-p{
+  color: white;
+  align-content: center;
+}
+
+</style>
+<body>
+  <header>
+    <div class="header-div">
+      <i class="fas fa-bars"></i>
+       <p class="header-p">Ali Raza</p>
+       <ul class="header-list">
+        <li><a>About</a></li>
+        <li><a >Skills</a></li>
+        <li><a>Contact</a></li>
+       </ul>
+    </div>
+  </header>
+  <div class="hero-sec">
+    <h1 class="hero-h1">Hello, I'm Ali Raza</h1>
+    <p class="hero-p">Web Developer | Designer | Learner</p>
+    <button class="hero-btn">Hire Me</button>
+  </div>
+  <div class="container1">
+    <h1 class="con1-h1">About Me</h1>
+    <p class="con1-p"> I am learning HTML, CSS, and Bootstrap. This is my first portfolio project in Bootstrap. My goal is to become a great developer by practicing every day.</p>
+  </div>
+  <div class="container2">
+    <h2 class="con2-h2">My Skills</h2>
+    <div class="subCon-1">
+      <h3 class="subCon-1-h3">HTML5</h3>
+      <p>Building structured web pages with semantic tags.</p>
+    </div>
+    <div class="subCon-2">
+      <h3 class="subCon-1-h3">CSS3</h3>
+      <p>Styling with layouts, colors, and animations.</p>
+    </div>
+    <div class="subCon-3">
+      <h3 class="subCon-1-h3">Bootstrap</h3>
+      <p>Creating responsive and modern websites quickly.</p>
+    </div>
+  </div>
+   
+  <div class="form">
+    <h1 class="form-h1">Contact Me</h1>
+    <div class="sub-div1">
+      <label for="Name" id="first">Name</label>
+      <input type="text" placeholder="Your Name" name="myName" class="Name">
+    </div>
+     <div class="sub-div2">
+      <label for="email" id="second">Email</label>
+      <input type="text" placeholder="Your Email" name="myEmail" class="Email">
+    </div>
+
+     <div class="sub-div3">
+      <label for="Message" id="third">Message</label>
+      <input type="text" placeholder="Your Message" name="myMesage" class="Messager" >
+    </div>
+  </div>
+  <footer>
+    <p class="foot-p">Copyright &copy; 2025 empowered by Raza.
+
+    </p>
+  </footer>
+</body>
+</html>

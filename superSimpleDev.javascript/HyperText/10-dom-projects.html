@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+  <style>
+.calculator{
+ font-weight: 15px;
+ padding: 12px;
+}
+.calculate-btn{
+padding: 12px 15px;
+  font-size: 15px;
+  background-color: green;
+  color: white;
+  margin-left: 5px;
+}
+
+p{
+  font-size: 1.5rem;
+  font-family: Arial;
+}
+.btn{
+  padding: 10px;
+  border: none;
+  border-radius: 5rem;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.is-subscribed{
+  color: black;
+  background-color: rgb(235, 230, 230);
+}
+  </style>
+</head>
+<body>
+   <!-- Whenever we get a value form DOM, the value wil be a string.  -->
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40 = +$10 shipping</p>
+  <p>Orders over $40 = FREE shipping</p>
+  <input type="number" class="js-calculator calculator" placeholder="Cost of Order"
+  onkeydown="
+Calculate_by_btn(event);
+  ">
+  <button onclick="
+   calculateShipping();             " class="calculate-btn">Calculate</button> 
+ <!-- clicks, keydowns  => envents
+onlick, onkeydown  => enent listners  (Every event listner gets an event object)
+
+onclick  = Click
+onkeydown = key press
+onscroll = scrolling 
+onmouseseenter = hovering over
+onmouseleave = stop hovering over  -->
+    <p class="js-total-cost"></p> 
+  
+  <p> Youtube Subscribe Button</p>
+ <button onclick="
+ 
+ Subscribe();
+  " class="btn">  
+  Subscribe
+   </button>
+  <script>
+
+
+    function Subscribe(){
+      let buttonElement= document.querySelector('.btn')
+ if (buttonElement.innerText==='Subscribe'){
+  buttonElement.innerHTML='Subscribed';
+  buttonElement.classList.add ('is-subscribed');
+ }else{   buttonElement.innerHTML='Subscribe';
+ buttonElement.classList.remove('is-subscribed');
+
+ }
+    } 
+ 
+ function calculateShipping(){
+// inputValue gives us String value so to convert it into number we use Number() method. Why?? because javascript convert value into string so we use mehtod.
+  let inputValue=Number( document.querySelector('.js-calculator')
+  .value);
+let result;
+  if(  inputValue< 40){
+    result =( inputValue+10)+'$';
+  }
+  else if( inputValue>40){
+    result= ( inputValue+'$');
+  }else{
+    result =('not Number')
+  }
+  console.log(result);
+
+ document.querySelector('.js-total-cost')
+ .innerHTML = result ;
+ }
+    
+function Calculate_by_btn(event){
+ 
+
+  if (event.key === 'Enter'){
+    calculateShipping();   
+  }
+}
+ document.querySelector('.js-total-cost')
+ .innerHTML = calculateShipping();
+  </script>
+</body>
+</html> 

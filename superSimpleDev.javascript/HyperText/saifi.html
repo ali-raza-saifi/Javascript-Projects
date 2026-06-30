@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Session</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<!-- 
+  <input type="text" id="taskInput" placeholder="Enter your task">
+  <button id="addBtn">Add</button>
+  <ul id="taskList"></ul> -->
+  <p> Rock Paper Scisor Game </p>
+  <button onclick="playGame('rock')">Rock</button>
+  <button onclick="playGame('paper')">Paper</button>
+  <button onclick="playGame('scissor')">Scissor</button>
+
+  
+</body>
+
+<script>
+function playGame(playerMove){
+
+const computerMove =pickComputerMove();
+let result = '';
+if (playerMove === 'Scissor'){
+      if(computerMove=== 'rock'){
+    result = 'you lose';
+  }
+  else if (computerMove=== 'paper'){
+    result='you win';
+  } 
+  else if (computerMove=== 'scissor'){
+    result='match tie ';
+  }
+}
+  else if(playerMove === 'paper'){
+    if(computerMove=== 'rock'){
+        result = 'you win';
+      }
+      else if (computerMove=== 'paper'){
+        result='match tie';
+      } 
+      else if (computerMove=== 'scissor'){
+        result='you lose ';
+      }
+    }
+      else if(playerMove === "rock"){
+          if(computerMove=== 'rock'){
+            result = 'match tie';
+          }
+          else if (computerMove=== 'paper'){
+            result='you lose';
+          } 
+          else if (computerMove=== 'scissor'){
+            result='you win ';
+          }
+}
+alert(`you played ${playerMove} and computer played ${computerMove} so ${result}`);
+}
+
+
+
+
+
+
+  // this funcion for computer to pick a random move 
+  function pickComputerMove(){
+  let randNUm = Math.random(); // gives a random number between 0 and 1
+  if(randNUm < 0.33){
+    let res = "rock";
+  }
+  else if(randNUm < 0.66){
+     res = "paper";
+  }
+  else{
+    res = "scissor";
+  }
+  return res;
+  }
+// let num = prompt("Enter a  number : ");
+// for( i=1 ; i<=10; i++){
+//   console.log(`${num} * ${i} = ${num*i}`);
+// }
+
+// let num=Number(prompt("enter the number  so that i can count them :"));
+// let count =0;
+// while(num>0){
+//   num = Math.floor(num/10);
+//   count++;
+// }
+
+// console.log(`the number of digits is: ${count}`);
+
+
+
+
+// let num = Number(prompt("Enter the number so that i can count them :"));
+// let count=0;
+// if (num ===0){
+//   count = 1
+// }
+
+//   else 
+//   while (num>0){
+//     num = Math.floor(num/10);
+//     count++;
+//   }
+
+// console.log(`the number of digits are : ${count}`);
+
+
+// let num= prompt("Enter the number : ");
+// if (num[0]==="-"){
+//   let res=num.slice(1);
+//   console.log(res.length);
+// }
+// else{
+//   console.log(num.length);
+// }
+
+
+// let num= prompt("Enter the number : ");
+// if (num[0]==="-"){
+//   let neg = num.slice(1);
+//   let b= neg.split("").reverse().join("");
+//   console.log("-"+b);
+// }
+// else{
+// let result=num.split("").reverse().join("");
+// console.log(result);
+// }
+
+
+// let num1= prompt("Enter the number : ");
+// let num2= num1.split("").reverse().join("");
+// if (num1 === num2){
+//   console.log("This is palindrome sequence");
+// }
+// else{
+//   console.log("That is not palindrome sequence");
+// }
+
+
+
+// let num=Number( prompt("Enter the number : "));
+// fact=1;
+// if(num<0){
+//   console.log("Factorial is not defined for negative numbers");
+
+// }
+// else{
+//   for(i=1;i<=num;i++){
+//     fact = fact*i;
+//   }
+//   console.log(fact);
+// }
+
+
+
+
+
+
+
+
+//   let taskInput =document.querySelector("#taskInput");
+//   let addBtn = document.querySelector("#addBtn");
+//   let taskList = document.querySelector("#taskList");
+//   let tasks = [];
+// addBtn.addEventListener("click", function(){
+//   let taskText = taskInput.value;
+//   if(taskText ===""){
+//     alert("Please Enter the task");
+//     return;
+//   }
+//   let task = {
+//     text: taskText,
+//     completed: false
+//   };
+//   tasks.push(task);
+//   taskInput.value = "";
+//   showTasks();
+
+// });
+// function showTasks() {
+
+//     taskList.innerHTML = "";
+
+//     tasks.forEach(function (task, index) {
+
+//         let li = document.createElement("li");
+//         li.textContent = task.text;
+
+//         if (task.completed) {
+//             li.style.textDecoration = "line-through";
+//         }
+
+//         let completeBtn = document.createElement("button");
+//         completeBtn.textContent = "✔";
+
+//         completeBtn.onclick = function () {
+//             tasks[index].completed = !tasks[index].completed;
+//             showTasks();
+//         };
+
+//         let deleteBtn = document.createElement("button");
+//         deleteBtn.textContent = "❌";
+
+//         deleteBtn.onclick = function () {
+//             tasks.splice(index, 1);
+//             showTasks();
+//         };
+
+//         li.appendChild(completeBtn);
+//         li.appendChild(deleteBtn);
+//         taskList.appendChild(li);
+//     });
+// }
+
+
+// function saveTasks() {
+//     localStorage.setItem("tasks", JSON.stringify(tasks));
+// }
+
+//   function loadTasks() {
+//     let data = localStorage.getItem("tasks");
+//     if (data) {
+//         tasks = JSON.parse(data);
+//     }
+// }
+
+
+// loadTasks();
+// showTasks();
+
+
+</script>
+</html>

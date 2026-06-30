@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Form Validator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f2f2f2;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Simple Form Validator</h2>
+
+  <input type="text" class="js-name" placeholder="Enter your name"><br>
+  <input type="number" class="js-age" placeholder="Enter your age"><br>
+
+  <button onclick="validateForm()">Submit</button>
+
+  <p class="js-message message"></p>
+
+  <script>
+    function validateForm() {
+
+      // 🔹 Get values
+      let name = document.querySelector('.js-name').value;
+      let age = Number(document.querySelector('.js-age').value);
+
+      let message = document.querySelector('.js-message');
+
+      // 🔹 Validation
+      if (!name) {
+        message.textContent = "Name is required!";
+        message.style.color = "red";
+        return;
+      }
+
+      if (!age || age <= 0) {
+        message.textContent = "Enter a valid age!";
+        message.style.color = "red";
+        return;
+      }
+
+      // 🔹 Success
+      message.textContent = "Form submitted successfully!";
+      message.style.color = "green";
+    }
+  </script>
+
+</body>
+</html>
