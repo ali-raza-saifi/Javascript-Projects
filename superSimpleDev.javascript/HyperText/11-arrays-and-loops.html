@@ -3,15 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Projects</title>
+  <title>Arrays and Loops</title>
   <style>
+ body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-top: 50px;
+    }
 
+    .container {
+      background: white;
+      padding: 20px;
+      width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 10px;
+      width: 70%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      
+    }
+
+    button {
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background: #eee;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
-   
-  <script>
+    <div class="container">
+    <h2>Todo List</h2>
 
+    <input type="text" id="todoInput" placeholder="Enter todo">
+    <button onclick="addTodo()">Add</button>
+
+    <ul id="todoList"></ul>
+  </div>
+  <script>
+                //       Arrays = list of values
+                //       Array = special type of object that stores ordered values
+    const myArray = [10, 20, 30];
+    console.log(myArray);
+    const mixedArray = [1, 2, "hello", true, {name: "ali"}, [1, 2, 3]]; // array can contain any type of value
+    console.log(mixedArray);
+
+    console.log(typeof myArray); // object
+    console.log(Array.isArray(myArray)); // true
+
+
+                //    Todo list Example
+        function addTodo() {
+      let input= document.getElementById("todoInput");
+      let inputValue = input.value.trim(); // Get the value from the input field and trim whitespace
+
+      if (inputValue === "") return;
+
+      let li = document.createElement("li");
+      li.innerText = inputValue;
+            // .appendChild() = "Add this element inside another element (at the end)"
+      document.getElementById("todoList").appendChild(li);
+
+      input.value = ""; // Clear the input field after adding the todo
+    }
+
+
+    document.getElementById("todoInput").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default action of the Enter key
+        addTodo();
+      }
+    });
   </script>
 </body>
 </html> 
