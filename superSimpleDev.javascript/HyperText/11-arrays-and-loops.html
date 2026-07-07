@@ -69,13 +69,13 @@
   <script>
                 //       Arrays = list of values
                 //       Array = special type of object that stores ordered values
-    const myArray = [10, 20, 30];
+  /*  const myArray = [10, 20, 30];
     console.log(myArray);
     const mixedArray = [1, 2, "hello", true, {name: "ali"}, [1, 2, 3]]; // array can contain any type of value
     console.log(mixedArray);
 
     console.log(typeof myArray); // object
-    console.log(Array.isArray(myArray)); // true
+    console.log(Array.isArray(myArray)); // true  
 
 
                 //    Todo list Example
@@ -99,7 +99,27 @@
         event.preventDefault(); // Prevent the default action of the Enter key
         addTodo();
       }
-    });
+    });      */
+
+
+
+                                     // Loops
+                                  //   👉 Accumulator pattern means:
+                 //     Using a variable to collect/store values step by step inside a loop 
+let sum = 0;
+let arr = [2,3,4];
+for(let i =0; i<arr.length; i++){
+  num = arr[i];
+  sum += num; // sum = sum + num
+  console.log(`Step ${i+1}: num = ${num}, sum = ${sum}`);
+}
+    
+
+
+
+
+
+
   </script>
 </body>
 </html> 

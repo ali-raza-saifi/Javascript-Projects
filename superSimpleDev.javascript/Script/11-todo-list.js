@@ -15,14 +15,6 @@ let inputValue = input.value;
 
 
 let list = document.querySelector(".js-list");
-let renderList = () => {
-  list.innerHTML = "";
-  arr.forEach((item) => {
-    let li = document.createElement("li");
-    li.textContent = item;
-    list.appendChild(li);
-  });
-};
 
 
-btn.addEventListener("click", addItem);
+
