@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Chapter 11</title>
+</head>
+<body>
+  
+
+  <script>
+                 // 11a
+// let arr1 = [10, 20, 30];
+// arr1[2] = 99;
+// console.log(arr1);
+
+                  //11b
+
+/*let arr2= [1,20,22, 24,5];
+function getLastValue(arr2){
+let lastValue = arr2[arr2.length - 1];
+console.log(lastValue);
+
+
+}
+getLastValue(arr2); */
+
+        
+                  //11c 
+
+/*let arr3= [1,20,22, 24,5];
+function swapFirstAndLast(arr3){
+// this is a destructuring assignment, which allows us to swap the values of two variables without using a temporary variable. The first element of the array is assigned to the last element, and the last element is assigned to the first element.
+   [arr3[0], arr3[arr3.length - 1]] = [arr3[arr3.length - 1], arr3[0]];
+  console.log(arr3);
+}
+swapFirstAndLast(arr3);
+*/
+
+              // 11d
+
+
+/*for (let i = 0; i <= 10; i += 2) {
+        console.log(i);
+      }
+
+            // 11e
+for (let i =5; i>=0; i--){
+  console.log(i);}
+*/
+
+            //11g
+/*let arr4= [1, 2, 3, 4, 5];
+let arr5=[];
+for (let i=0; i<arr4.length; i++){
+  let currentValue = arr4[i];
+  let increasedValue = currentValue + 1;
+  arr5.push(increasedValue);
+  
+}
+console.log(arr5);
+
+*/
+
+// .map() takes an array and creates a NEW array
+// 👉 It transforms each element
+// ✔ Returns new array
+// ✔ Does NOT change original array
+// ✔ Runs function on every element
+
+// .map() gives you 3 things (optional):
+
+// arr.map((value, index, array) => {
+//   console.log(value, index, array);
+// });
+
+/*Alternative method to do the same thing as above is using .map() method, which is a higher-order function that takes a callback function as an argument and applies it to each element of the array, returning a new array with the transformed values.
+ let arr4 = [1, 2, 3, 4, 5];
+ let newArr = arr4.map(num => num + 1);
+ console.log(newArr); // [2, 3, 4, 5, 6]
+*/
+
+
+                  //11i
+
+/*let arr6 = [1, 2, 3, 4, 5];
+let num = 10;
+function addNum(arr6, num) {
+  let newArr = arr6.map(value => value + num);
+  console.log(newArr);
+}
+addNum(arr6, num);
+addNum([10, 20, 30], 2);
+*/
+
+
+
+ //   Other Method
+/*let arr6 = [];
+function addNum(arr6, num) {
+
+  for(let i=0; i<arr6.length; i++){
+    arr6[i] += num;
+  }
+  console.log(arr6);
+}
+addNum([2,3,4,5], 10);
+addNum(['ali', 'hassan', 'ahmed'], 5);
+*/
+
+
+                // 11j
+
+/*
+function addArrays(firstArr, secondArr) {
+for (let i = 0; i < firstArr.length; i++) {
+let sum = firstArr[i] + secondArr[i];
+console.log(sum);
+}
+}
+addArrays([1, 2, 3], [4, 5, 6]);
+*/
+
+// If both arrays have different lengths, we can use Math.max to take the maximum length from two arrays 
+// We can use Maht.max to take maximum length from two arrays 
+// then we treat missing values as 0
+
+/*
+function addArrays(firstArr, secondArr) {
+  let result = [];
+  let length = Math.max(firstArr.length, secondArr.length);
+  for (let i = 0; i < length; i++) {
+    let sum = (firstArr[i] || 0) + (secondArr[i] || 0);
+    result.push(sum);
+  }
+  console.log(result);
+}
+  addArrays([1, 2, 3], [4, 5, 6]);
+  addArrays([1, 2], [4, 5, 6]);   //[5,7,6]
+  */
+
+                    // 11.l
+/*                    
+function minMax(arr) {
+  let max = arr[0];
+  let min = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if(arr[i] >max) {
+      max = arr[i];
+    }
+    if(arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  console.log(`Max: ${max}, Min: ${min}`);
+}
+minMax([1, 2, 3, 4, 5]);
+minMax([10, 20, 30, 40, 50]);
+*/
+
+                // 11n
+
+  function minMax(nums) {
+        // We'll set the starting values of min and max
+        // to null this time.
+        const result = {
+          min: null,
+          max: null
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          // If the min is null OR the value is
+      // less than the min, update the min.
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          // If the max is null OR the value is
+          // greater than the max, update the max.
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+
+          // We have to use 2 if-statements above instead of
+          // an if-else statement. This makes sure both the
+          // min and max are set if they are null.
+        }
+
+        return result;
+      }
+
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+
+
+
+  </script>
+</body>
+</html>

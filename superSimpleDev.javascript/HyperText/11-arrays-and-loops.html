@@ -105,14 +105,29 @@
 
                                      // Loops
                                   //   👉 Accumulator pattern means:
-                 //     Using a variable to collect/store values step by step inside a loop 
-let sum = 0;
+                 //     Using a variable to collect/store values step by step inside a loop
+                 
+                 
+
+let sum = 0;    // accumulator variable to store the sum of numbers
 let arr = [2,3,4];
+let arr2 = [];
 for(let i =0; i<arr.length; i++){
-  num = arr[i];
-  sum += num; // sum = sum + num
-  console.log(`Step ${i+1}: num = ${num}, sum = ${sum}`);
+  let num = arr[i];
+ // let res = arr[i] * 2; // double the number
+ arr2.push(num * 2); // store the doubled number in arr2   
+  console.log(`Step ${i+1}: num = ${num}, doubled = ${res}`);
+  
+
+ //a sum += num; // sum = sum + num
+  // console.log(`Step ${i+1}: num = ${num}, sum = ${sum}`);
 }
+
+
+
+
+
+
     
 
 
