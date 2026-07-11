@@ -108,7 +108,7 @@
                  //     Using a variable to collect/store values step by step inside a loop
                  
                  
-
+/*
 let sum = 0;    // accumulator variable to store the sum of numbers
 let arr = [2,3,4];
 let arr2 = [];
@@ -122,7 +122,27 @@ for(let i =0; i<arr.length; i++){
  //a sum += num; // sum = sum + num
   // console.log(`Step ${i+1}: num = ${num}, sum = ${sum}`);
 }
+*/
 
+
+
+                  /*   Arrays are References   */
+                  let arr1= [1,2,3,4];
+                  let arr2 = arr1;      // we copy the reference of arr1 and point to arr2 so both points to same array
+                  arr2.push(5);
+                  console.log(arr1);
+                  console.log(arr2);
+                              
+
+                  // To avoid above problem, we use a method .slice(), which only copies the values of array
+                  let arr3= [1,2,3,4];
+                  let arr4 = arr3.slice();      // we copy the reference of arr1 and point to arr2 so both points to same array
+                  arr3.push(5);
+                  console.log(arr3);
+                  console.log(arr4);
+
+                        // this is called shorthand destructuring method
+                  const [firstVal, secValue] = [1,2,3];
 
 
 

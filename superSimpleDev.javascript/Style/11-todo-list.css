@@ -1,0 +1,43 @@
+body{
+  font-family: Arial;
+
+}
+.todo-grid,
+ .todo-input-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  column-gap: 10px;
+  row-gap: 10px;
+  /* 
+  by default, align items is stretch (stretch means, items fill the full height of parent container)
+  when we remove stretch, gives value "center", items then have their natural (content-based height)
+   */
+   align-items: center;
+}
+.todo-input-grid{
+  margin-bottom: 10px;
+  align-items: stretch;
+}
+.todo-input-name,
+.due-date-input{
+  font-size: 15px;
+  padding: 6px;
+}
+.add-todo-btn{
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+
+}
+
+.delete-todo-btn{
+  font-size: 15px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
