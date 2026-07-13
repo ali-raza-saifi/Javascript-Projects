@@ -159,7 +159,7 @@ minMax([10, 20, 30, 40, 50]);
 */
 
                 // 11n
-
+/*
   function minMax(nums) {
         // We'll set the starting values of min and max
         // to null this time.
@@ -196,6 +196,50 @@ minMax([10, 20, 30, 40, 50]);
 
       console.log(minMax([]));
       console.log(minMax([3]));
+*/
+
+                            // 110
+/*
+let strArr = ['hello', 'world', 'search', 'good'];
+let index  = -1;
+for(let i=0; i< strArr.length; i++){
+  // if we find the index of our indended  string then we will update our index
+  if(strArr[i] === 'search'){
+     index = i
+  }
+}
+console.log(index);
+*/
+                      //p
+/*
+let strArr = ['hello', 'world', 'search', 'good', 'search'];
+let index  = -1;
+for(let i=0; i< strArr.length; i++){
+  // if we find the index of our indended  string then we will update our index
+  if(strArr[i] === 'search'){
+     index = i;
+     break;
+  }
+  
+}
+console.log(index);
+*/
+                          // 11q
+
+ function findIndex(array, word) {
+  
+  for(let i=0; i<array.length; i++){
+    if(array[i] === word){
+      return i;
+    }
+    
+  }
+  return -1;
+  console.log(i);
+}
+
+findIndex(['green', 'red' ,'blue' , 'green'], 'green');
+
 
 
 
