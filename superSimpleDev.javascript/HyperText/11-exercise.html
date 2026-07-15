@@ -225,7 +225,7 @@ for(let i=0; i< strArr.length; i++){
 console.log(index);
 */
                           // 11q
-
+/*
  function findIndex(array, word) {
   
   for(let i=0; i<array.length; i++){
@@ -239,10 +239,88 @@ console.log(index);
 }
 
 findIndex(['green', 'red' ,'blue' , 'green'], 'green');
+*/
 
 
+                          // 11r
+/*
+let res =[];
+function removeEgg(foods){
+  for(let i=0; i<foods.length; i++){
+    if (foods[i] === "egg"){
+      continue;
+    }
+    res.push(foods[i]);
+  }
+  console.log(res);
+}
+
+removeEgg(['berger', 'egg', 'chicken', 'egg', 'egg']);
+*/
 
 
+                     // 11s
+/*
+let result = [];
+let eggsRemoved = 0;
+function removeEgg(foods){
+  for(let i=0; i<foods.length; i++){
+    if (foods[i]=== 'egg' && eggsRemoved <2 ){
+      eggsRemoved++;
+      continue;
+    }
+    console.log(foods[i]);
+  }
+}
+
+removeEgg(['banana', 'egg', 'orange', 'egg', 'bread', 'egg', 'egg']);
+*/
+
+                     //   11t
+
+/*
+function removeEgg(array) {
+  let eggsRemoved = 0;
+
+  const reversed = array.slice().reverse();
+  const result = [];
+
+  for (let i = 0; i < reversed.length; i++) {
+    if (reversed[i] === 'egg' && eggsRemoved < 2) {
+      eggsRemoved++;
+      continue;
+    }
+
+    result.push(reversed[i]);
+  }
+
+  return result.reverse();
+}
+
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+
+
+                  // 11v
+
+
+function fizzBuzz(){
+let res;
+  for (let i=1; i<=20; i++){
+    if (i%3 === 0){
+       res = `The number ${i} is Fizz`;
+    }
+     if(i%5 === 0){
+      res = `The number ${i} is Buzz`;
+    }
+     if(i%3 ===0 && i%5 === 0){
+      res = `The number ${i} is FizzBuzz`;
+    }
+    
+    console.log(res);
+  }
+}
+fizzBuzz();
   </script>
 </body>
 </html>
